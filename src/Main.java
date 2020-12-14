@@ -1,6 +1,12 @@
+import java.io.FileInputStream;
+import java.io.IOException;
+
 public class Main {
-    public static void main(String[] args) {
-        System.out.println("자바");
-        System.out.println("나는 홍길동 입니다.");
+    public static void main(String[] args) throws IOException {
+        byte[] b = new byte[1024];
+        FileInputStream input = new FileInputStream("D:/Temp/out1.txt");
+        input.read(b);
+        System.out.println(new String(b));
+        input.close();
     }
 }
